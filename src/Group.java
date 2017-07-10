@@ -17,7 +17,9 @@ public class Group implements Voenkom{
         if(index >= countStudent){
             throw new countStudentException();
         }
-        students[index++] = student;
+        if(student != null){
+            students[index++] = student;
+        }
     }
 
     public void delStudent(int index){

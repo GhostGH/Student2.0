@@ -6,7 +6,7 @@ public class Main {
         Group group = new Group();
         Scanner scanner = new Scanner(System.in);
 
-// заполнить массив студентами в ручную
+// interactive array
         /*while (Group.getIndex() < Group.getCountStudent()){
             System.out.println("Введите имя фамилию возраст факультет и курс студента:");
             String string = scanner.nextLine();
@@ -23,7 +23,7 @@ public class Main {
                 System.out.println(e.getMessage());
             }
         }*/
-// заполнить массив студентами
+
         try {
             group.addStudent(new Student("Alex0", "Platon", 15, "IT", 4));
             group.addStudent(new Student("Alex1", "Platon1", 24, "IT", 3));
@@ -38,23 +38,22 @@ public class Main {
         } catch (countStudentException e) {
             System.out.println(e.getMessage());
         }
-//удаление
+//delete student by index
         group.delStudent(2);
 
 
-//сортировка по параметру
+//sort by parameter
         System.out.println("По какому параметру сортировать?");
         System.out.println("0 - Имя\n1 - Фамилия\n2 - возраст\n3 - факультет\n4 - курс");
         int parametr = scanner.nextInt();
         group.sortByParametr(parametr);
         System.out.println(group);
 
-//интерфейс военком
+//interface voenkom
         Student[] soldiers = group.getSoldier();
         for (Student sl : soldiers){
             System.out.println(sl);
         }
-
     }
 }
 
